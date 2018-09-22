@@ -1,3 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`plugins/git/render commit snapshots as expected 1`] = `"3715ddf: This is an example commit"`;
+exports[`plugins/git/render a commit with multiple repos snapshots as expected 1`] = `
+<span>
+  <code>
+    <a
+      href="https://github.com/sourcecred/example-github/commit/multirepository"
+      rel="nofollow noopener"
+      target="_blank"
+    >
+      multi
+    </a>
+  </code>
+  : 
+  This nonexistent commit is in multiple repos
+</span>
+`;
+
+exports[`plugins/git/render a regular commit snapshots as expected 1`] = `
+<span>
+  <code>
+    <a
+      href="https://github.com/sourcecred/example-github/commit/3715ddfb8d4c4fd2a6f6af75488c82f84c92ec2f"
+      rel="nofollow noopener"
+      target="_blank"
+    >
+      3715ddf
+    </a>
+  </code>
+  : 
+  This is an example commit
+</span>
+`;
+
+exports[`plugins/git/render logs an error for a commit not in the repository 1`] = `
+<code>
+  1234
+</code>
+`;
+
+exports[`plugins/git/render logs an error for a commit without any matching repos 1`] = `
+<span>
+  <code>
+    norepo
+  </code>
+  : 
+  This commit doesn't really exist
+</span>
+`;
